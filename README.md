@@ -76,6 +76,18 @@ go env  # see the env vars.
 go get -v XXX # The `v` flag is for looking at details of downloading.
 ```
 
+Run your codes:
+
+```shell
+go run basic/01_helloworld  # Compile & run
+
+# Traditional Pipeline
+# Go to your project folder && create a module
+go mod init basic/01_helloworld
+go install basic/01_helloworld # Put the executable file(main function) into the `bin` folder.
+# Or: go install` means `go install .`
+```
+
 ### Tutorial
 
 * [YOUTUBE](https://www.youtube.com/watch?v=YS4e4q9oBaU)

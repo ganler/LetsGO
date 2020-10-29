@@ -1,16 +1,16 @@
 This guy finally starts to learn GO.
 
-Resources:
+## Resources
 
-Tutorial:
+### Tutorial
 
 [YOUTUBE](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 [Go by Example](https://gobyexample.com/)
 
-Docs:
+### Docs
 
 
-Standards:
+### Standards
 
 [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 ```

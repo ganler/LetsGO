@@ -79,12 +79,13 @@ go get -v XXX # The `v` flag is for looking at details of downloading.
 Run your codes:
 
 ```shell
-go run basic/01_helloworld  # Compile & run
+go run basics/01_helloworld/main.go  # Compile & run
 
 # Traditional Pipeline:
-# Go to your project folder && create a module
-go mod init basic/01_helloworld
-go install basic/01_helloworld # Put the executable file(main function) into the `bin` folder.
+# Go to your main.go folder && create a module
+cd basics/01_helloworld
+go mod init basics/01_helloworld
+go install basics/01_helloworld # Put the executable file(main function) into the `bin` folder.
 # Or: go install` means `go install .`
 
 # After installation, you can find your executable program(named afted the module name) on your `bin` folder if you have any main functions in your file.

@@ -38,7 +38,7 @@ go env  # see the env vars.
 go get XXX --verbose # Tha `verbose` flag is for looking at details of downloading.
 ```
 
-### Tutorial / Resources
+### Tutorial
 
 * [YOUTUBE](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 * [Go by Example](https://gobyexample.com/)

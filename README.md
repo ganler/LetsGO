@@ -1,5 +1,21 @@
 This guy finally starts to learn GO.
 
+## Why GO
+
+This is a response to issue#1 [link](https://github.com/ganler/LetsGO/issues/1). 
+
+Refer to this [article](https://productcoalition.com/reasons-why-golang-is-better-than-other-programming-languages-4714082bb1b1).
+
+> * Fast-paving compilation and execution
+> * Do away with the need of working with different subsets of languages for one project.
+> * A boost to code readability and documentation
+> * Offering a thoroughly consistent language
+> * Facilitating easy versioning of the program
+> * Allowing developing with multiple languages
+> * Allowing easier maintenance of dependencies
+
+Any personal reasons? Yes, of course. I am just too bored that I want to learn something different and all. Thanks, @PragmaTwice.
+
 ## Resources
 
 ### Setup

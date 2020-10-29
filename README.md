@@ -30,7 +30,7 @@ cd $GOPATH/src
 git clone https://github.com/ganler/LetsGO.git
 ```
 
-## Basic CMDs
+### Basic CMDs
 
 ```shell
 go version

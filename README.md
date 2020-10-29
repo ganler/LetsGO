@@ -24,7 +24,7 @@ Any personal reasons? Yes, of course. I am just too bored that I want to learn s
     * for mac: `brew install go`
 * Add `$GOROOT/bin` into your `$PATH` if you want to make go compiler directly executable. (ignore this step if you are using a package manager / `.msi` on Windows)
 * Set `$GOPATH` to somewhere you want to put all your go files.
-* `go get github.com/nsf/gocode --verbose` to set up your `$GOPATH` (by installing a package).
+* `go get github.com/nsf/gocode -v` to set up your `$GOPATH` (by installing a package).
 * You can also manually set up `$GOPATH`:
     1. `mkdir src && mkdir bin && mkdir pkg`
     2. Put your projects under the `src` folder.
@@ -37,12 +37,17 @@ Any personal reasons? Yes, of course. I am just too bored that I want to learn s
 ### Install this repo
 
 ```
+### Uniform approach
+go get github.com/ganler/LetsGO -v
+
 ### For Windows PowerShell users:
 cd $Env:GOPATH\src
+mkdir ganler && cd ganler
 git clone https://github.com/ganler/LetsGO.git
 
 ### For non-Windows users:
 cd $GOPATH/src
+mkdir ganler && cd ganler
 git clone https://github.com/ganler/LetsGO.git
 ```
 
@@ -51,7 +56,7 @@ git clone https://github.com/ganler/LetsGO.git
 ```shell
 go version
 go env  # see the env vars.
-go get XXX --verbose # Tha `verbose` flag is for looking at details of downloading.
+go get XXX -v # The `v` flag is for looking at details of downloading.
 ```
 
 ### Tutorial

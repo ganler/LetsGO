@@ -24,7 +24,7 @@ Any personal reasons? Yes, of course. I am just too bored that I want to learn s
     * for mac: `brew install go`
 * Add `$GOROOT/bin` into your `$PATH` if you want to make go compiler directly executable. (ignore this step if you are using a package manager / `.msi` on Windows)
 * Set `$GOPATH` to somewhere you want to put all your go files.
-* `go get github.com/nsf/gocode -v` to set up your `$GOPATH` (by installing a package).
+* `go get -v github.com/nsf/gocode` to set up your `$GOPATH` (by installing a package).
 * You can also manually set up `$GOPATH`:
     1. `mkdir src && mkdir bin && mkdir pkg`
     2. Put your projects under the `src` folder.
@@ -34,11 +34,26 @@ Any personal reasons? Yes, of course. I am just too bored that I want to learn s
 > More about `GOPATH`: **It is OK to have more than one `$GOPATH`.**
 > If you have multiple `GOPATH` entries, only the first one will be used for downloading source codes(i.e., `go get`), but all you entries can be searched for source codes. 
 
+### Proxy
+
+```shell
+go env -w GO111MODULE=on
+go env -w GOPROXY="https://goproxy.io,direct"
+
+# Set environment variable allow bypassing the proxy for selected modules (optional)
+go env -w GOPRIVATE="*.corp.example.com"
+
+# Set environment variable allow bypassing the proxy for specified organizations (optional)
+go env -w GOPRIVATE="example.com/org_name"
+```
+
+See [https://goproxy.io/](https://goproxy.io/) for details.
+
 ### Install this repo
 
 ```
 ### Uniform approach
-go get github.com/ganler/LetsGO -v
+go get -v github.com/ganler/LetsGO
 
 ### For Windows PowerShell users:
 cd $Env:GOPATH\src
@@ -56,7 +71,7 @@ git clone https://github.com/ganler/LetsGO.git
 ```shell
 go version
 go env  # see the env vars.
-go get XXX -v # The `v` flag is for looking at details of downloading.
+go get -v XXX # The `v` flag is for looking at details of downloading.
 ```
 
 ### Tutorial

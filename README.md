@@ -57,12 +57,14 @@ go get -v github.com/ganler/LetsGO
 
 ### For Windows PowerShell users:
 cd $Env:GOPATH\src
-mkdir ganler && cd ganler
+mkdir -p github.com && cd github.com
+mkdir -p ganler && cd ganler
 git clone https://github.com/ganler/LetsGO.git
 
 ### For non-Windows users:
 cd $GOPATH/src
-mkdir ganler && cd ganler
+mkdir -p github.com && cd github.com
+mkdir -p ganler && cd ganler
 git clone https://github.com/ganler/LetsGO.git
 ```
 

@@ -81,11 +81,13 @@ Run your codes:
 ```shell
 go run basic/01_helloworld  # Compile & run
 
-# Traditional Pipeline
+# Traditional Pipeline:
 # Go to your project folder && create a module
 go mod init basic/01_helloworld
 go install basic/01_helloworld # Put the executable file(main function) into the `bin` folder.
 # Or: go install` means `go install .`
+
+# After installation, you can find your executable program(named afted the module name) on your `bin` folder if you have any main functions in your file.
 ```
 
 ### Tutorial

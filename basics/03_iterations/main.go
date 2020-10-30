@@ -99,4 +99,25 @@ func main() {
 	}
 
 	fmt.Println(ss)
+
+	// Maps
+	m := make(map[string]int)
+	// Or simply: m := map[string]int{"k0": 0, "k1": 1}
+	m["k0"] = 0
+	m["k1"] = 1
+
+	fmt.Println(m, "with length =", len(m))
+
+	delete(m, "k0")
+	fmt.Println("After delete,", m, "with length =", len(m))
+
+	// Ranges
+	arr4 := [4]int{1, 2, 3, 4}
+	for i, num := range arr4[:3] {
+		fmt.Println("index:", i, " | value:", num)
+	}
+
+	for k, v := range map[string]string{"a": "apple", "b": "banana"} {
+		fmt.Printf("%s -> %s\n", k, v)
+	}
 }

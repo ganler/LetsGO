@@ -13,7 +13,7 @@ type worker struct {
 
 func hireWorker(name string, age int) worker {
 	if age > 35 {
-		fmt.Fprintf(os.Stderr, "Hi %s, We don't hire boys more than 35!", name)
+		fmt.Fprintf(os.Stderr, "Hi %s, We don't hire boys older than 35!", name)
 		os.Exit(1)
 	}
 	return worker{name: name, age: age}

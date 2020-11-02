@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func strChange(str string) string {
@@ -14,6 +15,24 @@ func sumChan(s []int, ch chan int) {
 		ret += v
 	}
 	ch <- ret
+}
+
+func fibonacci(datachan, quit chan int) {
+	x, y := 0, 1
+	fmt.Println("begin fibonacci...")
+	for {
+		select {
+		// Select the upcoming case. If there're multiple ready ones, do it at random.
+		case datachan <- x:
+			x, y = y, x+y
+		case <-quit:
+			fmt.Println("quit...")
+			return
+		default: // Runs if no one is ready...
+			fmt.Println("No case is ready...")
+			time.Sleep(50 * time.Millisecond)
+		}
+	}
 }
 
 func main() {
@@ -69,4 +88,13 @@ func main() {
 
 	// Or if you want to check it manually.
 	// v, ok := <- bch
+	datachan := make(chan int)
+	quit := make(chan int)
+	go func() {
+		for range [5]int{} {
+			fmt.Println(<-datachan)
+		}
+		quit <- 1
+	}()
+	fibonacci(datachan, quit)
 }

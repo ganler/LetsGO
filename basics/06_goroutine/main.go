@@ -35,6 +35,15 @@ func fibonacci(datachan chan<- int /* chan<- push-only */, quit <-chan int /* <-
 	}
 }
 
+func timeoutMessage(flag <-chan bool) {
+	select {
+	case <-flag:
+		fmt.Println("NOT TIME OUT!")
+	case <-time.After(3 * time.Second):
+		fmt.Println("TIMEOUT -> 3s!")
+	}
+}
+
 func main() {
 	// A goroutine is a lightweight thread managed by the Go runtime.
 	// The parameters are evaluated in the current thread, but the will
@@ -107,4 +116,13 @@ func main() {
 	}(doneFlag)
 	<-doneFlag // Sync.
 	fmt.Println("[AfterSync] This happens after sync!")
+
+	// timeout flag;
+	reqFlag := make(chan bool)
+	go timeoutMessage(reqFlag)
+	time.Sleep(2 * time.Second)
+	go timeoutMessage(reqFlag)
+	time.Sleep(2 * time.Second)
+	reqFlag <- true
+	close(reqFlag)
 }

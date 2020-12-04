@@ -17,7 +17,7 @@ func sumChan(s []int, ch chan int) {
 	ch <- ret
 }
 
-func fibonacci(datachan, quit chan int) {
+func fibonacci(datachan chan<- int /* chan<- push-only */, quit <-chan int /* <-chan pop-only */) {
 	x, y := 0, 1
 	fmt.Println("begin fibonacci...")
 	for {
@@ -97,4 +97,14 @@ func main() {
 		quit <- 1
 	}()
 	fibonacci(datachan, quit)
+
+	// Use channel as a tool for synchronization;
+	doneFlag := make(chan bool)
+	go func(flag chan<- bool) { // chan<- means this channel is `push-only`;
+		// Do sth...
+		fmt.Println("[BeforeSync] Do sth before set the sync flag;")
+		flag <- true
+	}(doneFlag)
+	<-doneFlag // Sync.
+	fmt.Println("[AfterSync] This happens after sync!")
 }
